@@ -1,0 +1,83 @@
+import random as ran
+
+try:
+
+    a = ["stone", "paper", "scissors","paper","scissors", "stone"]
+    choice = ran.choice(a)
+    hp = 0
+    cp = 0
+    life = 10
+    lives = 0
+
+    while life > lives:
+        hc = input("Type you choice (stone, paper, scissors):")
+        hcl = hc.lower()
+
+
+        if choice == hc:
+            print(f"Draw, 0 points for you and computer.")
+            print(f"You and computer both entered {hcl}")
+
+        elif hcl == "stone" and choice == "paper":
+            cp = cp + 1
+            print(f"You entered {hcl} and computer entered {choice}")
+            print("Computer's point +1")
+            print(f"Your point is {hp} and computer's point is {cp}")
+
+        elif hcl == "stone" and choice == "scissors":
+            hp = hp + 1
+            print(f"You entered {hcl} and computer entered {choice}")
+            print("Your point +1")
+            print(f"Your point is {hp} and computer's point is {cp}")
+
+        elif hcl == "paper" and choice == "stone":
+            hp = hp + 1
+            print(f"You entered {hcl} and computer entered {choice}")
+            print("Your point +1")
+            print(f"Your point is {hp} and computer's point is {cp}")
+
+        elif hcl == "paper" and choice == "scissors":
+            cp = cp + 1
+            print(f"You entered {hcl} and computer entered {choice}")
+            print("Computer's point +1")
+            print(f"Your point is {hp} and computer's point is {cp}")
+
+        elif hcl == "scissors" and choice == "stone":
+            cp = cp + 1
+            print(f"You entered {hcl} and computer entered {choice}")
+            print("Computer's point +1")
+            print(f"Your point is {hp} and computer's point is {cp}")
+
+        elif hcl == "scissors" and choice == "paper":
+            hp = hp + 1
+            print(f"You entered {hcl} and computer entered {choice}")
+            print("Your point +1")
+            print(f"Your point is {hp} and computer's point is {cp}")
+
+        else:
+            print("Invalid input. Try again.")
+
+        lives = lives + 1
+        print(f"You have total {life - lives} changes left out of {life}")
+
+
+
+
+    if cp > hp:
+        print("You lost, Computer won.")
+        print(f"Your point was {hp} and computer's point is {cp}")
+
+
+    elif hp > cp:
+        print("You won, Computer lost.")
+        print(f"Your point is {hp} and computer's point was {cp}")
+
+
+    elif hp == cp:
+        print("Match draw.")
+        print(f"Your point is {hp} and computer's point is also {cp}")
+
+except Exception as e:
+    print(e)
+    print("Which means you have entered something invalid. Check your input and Try again.")
+
