@@ -1,0 +1,53 @@
+# Importing calendar and time module to see the calendar and time
+import calendar as can
+import time
+	
+# Givinh try statement as if the user enters any invalid input it will handle that and it will not show any error.
+try:
+		
+	# Making a new function which will save you activity  in a specific folder which means if you see any calendar by running the program that eill be saved in your device in a folder called Log.txt.
+	
+	def log(z, a, timw2):
+			with open ("Log.txt", "a") as log:
+				log.write(f"{timw2} : you told us to show you the calender of {a}\n")
+				log.write(log1)
+				
+	# In the same way I am making a new fuction which will show you the folder if you want to see the folder by running the program.
+				
+	def retrive():
+			with open ("Log.txt") as hello:
+				for item in hello:
+					print(item, end=" ")
+					
+	# Giving the intro and taking the input for running the loop from the user
+			
+	intro='Welcome to the calendar year. In this program we can tell you calendar of any year. If you want to support us please download our app from play store.'
+	print(intro)
+	counter=int(input("How many times do you want to surve the calendars:"))
+		
+	# Running the loop and and giving all the required function inside the loop. I am giving giving by initialising a variable to make my work more clear.
+	
+	for i in range(1, counter+1):
+			year1=int(input("Type which year's calendar do you want to see:"))
+			log1=can.calendar(year1, 6, 2, 3, 3 )
+			time2=time.asctime()
+			print(log1)
+			log(log1,year1,time2)
+			
+	# Here I am asking the user to enter that he/she wants to see what she have recorded or not.
+	# Converting the strig to lower case for extra protection
+	
+	value=input("Do you want to see what you have recorded?\nType Yes for yes and No for no:")
+	value1=value.lower()
+		
+	if value1=='yes':
+			retrive()
+	elif value1=='no':
+			print("ok")
+	else:
+			print("You have entered invalid input. Try again.")
+
+except Exception as e:
+	print(e,'\nWhich means you hsve entered invalid input. Check ad try again.' )
+  
+  
